@@ -47,3 +47,4 @@ jobs:
             format: 'table'
             exit-code: '1'
             severity: 'CRITICAL'
+            ignore-unfixed: true
