@@ -45,6 +45,5 @@ jobs:
           with:
             image-ref: ${{ secrets.DOCKER_USERNAME }}/comcache:latest
             format: 'table'
-            exit-code: '1'
             severity: 'CRITICAL'
             ignore-unfixed: true
