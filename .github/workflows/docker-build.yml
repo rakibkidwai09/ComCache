@@ -44,8 +44,6 @@ jobs:
             tags: |
               "${{ secrets.DOCKER_USERNAME }}/comcache:latest"
               "${{ secrets.DOCKER_USERNAME }}/comcache:${{ env.VERSION }}"
-            run: |
-              docker build -t compcache:latest .
 
         - name: Run trivy security scan
           uses: aquasecurity/trivy-action@master
