@@ -10,9 +10,13 @@ It provides a ready-to-deploy caching service with built-in rate limiting suppor
 # Features
 
 ✔ Redis-based high-performance caching
+
 ✔ Docker ready for easy container deployment
+
 ✔ Built-in rate limiting support using Redis counters
+
 ✔ Customizable Redis configuration (`redis.conf`)
+
 ✔ Automated image build using GitHub CI/CD workflows
 
 ---
@@ -34,7 +38,7 @@ ComCache stores frequently accessed data and rate-limiting counters to reduce lo
 ## Pull Docker Image
 
 ```bash
-docker pull rakibkidwai09/comcache:latest
+docker pull {{DOCKERHUB_USERNAME}}/comcache:latest
 ```
 
 ## Run Container
@@ -43,7 +47,7 @@ docker pull rakibkidwai09/comcache:latest
 docker run -d \
 -p 6379:6379 \
 --name comcache \
-rakibkidwai09/comcache:latest
+{{DOCKERHUB_USERNAME}}/comcache:latest
 ```
 
 ## Connect using Redis CLI
@@ -81,34 +85,6 @@ appendonly yes
 ```
 
 This allows control over memory usage, persistence, and eviction policies.
-
----
-
-# Kubernetes / OpenShift Deployment
-
-Example deployment:
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: comcache
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: comcache
-  template:
-    metadata:
-      labels:
-        app: comcache
-    spec:
-      containers:
-      - name: comcache
-        image: rakibkidwai09/comcache:latest
-        ports:
-        - containerPort: 6379
-```
 
 ---
 
