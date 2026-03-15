@@ -43,7 +43,7 @@ jobs:
         - name: Run trivy security scan
           uses: aquasecurity/trivy-action@master
           with:
-            image-ref: rakibkidwai09/comcache:latest
+            image-ref: kidwrak/comcache:latest
             format: 'table'
             exit-code: '1'
             severity: 'CRITICAL'
