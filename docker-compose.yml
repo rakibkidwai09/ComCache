@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  comcache:
+    build: .
+    container_name: comcache
+    ports:
+      - "6379:6379"
+
