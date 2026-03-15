@@ -1,4 +1,4 @@
-name : Build ComCache Docker Image with Redis
+name : Build ComCache
 
 on:
   push:
