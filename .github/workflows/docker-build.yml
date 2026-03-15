@@ -2,9 +2,16 @@ name : Build ComCache
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
+
+  workflow_dispatch:
+    inputs:
+      release:
+        description: 'Set true for release build, false for snapshot'
+        required: true
+        default: 'false'
+
 
 jobs:
     build:
